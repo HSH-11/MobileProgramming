@@ -20,7 +20,12 @@ public class MainActivity extends AppCompatActivity {
     private TextView textViewRandomNumber;
     private TextView textView;
     EditText eText;
-    
+
+    private EditText editTextUsername;
+    private EditText editTextPassword;
+    private EditText editTextPhoneNumber;
+    private TextView textViewUserInfo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) { // 애플리케이션이 이전에 실행되었던 상태 전달
         super.onCreate(savedInstanceState);
@@ -29,6 +34,12 @@ public class MainActivity extends AppCompatActivity {
         textViewRandomNumber = findViewById(R.id.textViewRandomNumber);
         eText = findViewById(R.id.edittext);
         textView = findViewById(R.id.textView);
+
+        editTextUsername = findViewById(R.id.editTextUsername);
+        editTextPassword = findViewById(R.id.editTextPassword);
+        editTextPhoneNumber = findViewById(R.id.editTextPhoneNumber);
+        textViewUserInfo = findViewById(R.id.textViewUserInfo);
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -44,6 +55,16 @@ public class MainActivity extends AppCompatActivity {
     public void onClicked_Text(View v){
         String str = eText.getText().toString();
         textView.setText(str);
+    }
+
+    public void onSignupButtonClick(View view){
+        String username = editTextUsername.getText().toString();
+        String password = editTextPassword.getText().toString();
+        String phoneNumber = editTextPhoneNumber.getText().toString();
+
+        // 입력된 정보를 화면 하단에 출력
+        String userInfo = "아이디: " + username + "\n패스워드: " + password + "\n전화번호: " + phoneNumber;
+        textViewUserInfo.setText(userInfo);
     }
 
 
