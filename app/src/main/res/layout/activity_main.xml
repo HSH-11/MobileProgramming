@@ -5,29 +5,81 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E6E6FA"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <!-- 입력창 + 버튼 (한 줄 배치) -->
+    <EditText
+        android:id="@+id/edittext"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Hello! HSH"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        android:layout_margin="16dp"
+        android:hint="여기에 텍스트를 입력하시오."
+        android:inputType="text"
+        app:layout_constraintEnd_toStartOf="@+id/button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.387" />
+        app:layout_constraintHorizontal_weight="1"/>
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:onClick="onClicked_Text"
+        android:text="텍스트 보이기"
+        app:layout_constraintBaseline_toBaselineOf="@id/edittext"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- 입력 결과 보여줄 TextView -->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="입력한 내용이 여기에 표시됩니다."
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/edittext"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- 난수 출력 -->
+    <TextView
+        android:id="@+id/textViewRandomNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="난수:"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- 난수 생성 버튼 -->
+    <Button
+        android:id="@+id/buttonGenerateRandom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:onClick="generateRandomNumber"
+        android:text="랜덤 생성"
+        app:layout_constraintTop_toBottomOf="@+id/textViewRandomNumber"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Call 버튼 (하단 고정) -->
     <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="222dp"
-        android:onClick="onClicked"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="#87CEFA"
+        android:onClick="onClicked_Call"
         android:text="Call"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
