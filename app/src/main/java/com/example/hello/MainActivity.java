@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -26,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTextPhoneNumber;
     private TextView textViewUserInfo;
 
+    private ImageView imageView;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) { // 애플리케이션이 이전에 실행되었던 상태 전달
         super.onCreate(savedInstanceState);
@@ -39,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
         editTextPassword = findViewById(R.id.editTextPassword);
         editTextPhoneNumber = findViewById(R.id.editTextPhoneNumber);
         textViewUserInfo = findViewById(R.id.textViewUserInfo);
+
+        imageView = findViewById(R.id.imageView);
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -76,4 +82,12 @@ public class MainActivity extends AppCompatActivity {
         // 텍스트 뷰에 난수 표시
         textViewRandomNumber.setText("난수: "+randomNumber);
     }
+
+    // 버튼 클릭 이벤트 처리 : 투명도 변경
+    public void changeAlpha(View view){
+        float alpha = imageView.getAlpha();
+        alpha = (alpha == 1.0f) ? 0.5f : 1.0f;
+        imageView.setAlpha(alpha);
+    }
+
 }
