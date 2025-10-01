@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
 
     private ImageView imageView;
 
+    private int scaleTypeIndex = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) { // 애플리케이션이 이전에 실행되었던 상태 전달
@@ -83,6 +85,19 @@ public class MainActivity extends AppCompatActivity {
         textViewRandomNumber.setText("난수: "+randomNumber);
     }
 
+    // 버튼 클릭 이벤트 처리: Scale Type 변경
+    public void changeScaleType(View view){
+        ImageView.ScaleType[] scaleTypes = {
+                ImageView.ScaleType.CENTER,
+                ImageView.ScaleType.CENTER_CROP,
+                ImageView.ScaleType.CENTER_INSIDE,
+                ImageView.ScaleType.FIT_CENTER,
+                ImageView.ScaleType.FIT_XY
+        };
+
+        imageView.setScaleType(scaleTypes[scaleTypeIndex]);
+        scaleTypeIndex = (scaleTypeIndex + 1) % scaleTypes.length;
+    }
     // 버튼 클릭 이벤트 처리 : 투명도 변경
     public void changeAlpha(View view){
         float alpha = imageView.getAlpha();

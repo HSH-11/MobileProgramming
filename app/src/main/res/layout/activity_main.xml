@@ -148,8 +148,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="250dp"
-        android:layout_height="180dp"
+        android:layout_width="271dp"
+        android:layout_height="178dp"
         android:layout_marginTop="656dp"
         android:elevation="6dp"
         android:padding="4dp"
@@ -163,10 +163,22 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="860dp"
+        android:layout_marginTop="852dp"
+        android:onClick="changeScaleType"
+        android:text="Scale Type 변경"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.265"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="852dp"
         android:onClick="changeAlpha"
         android:text="Alpha 변경"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.763"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
