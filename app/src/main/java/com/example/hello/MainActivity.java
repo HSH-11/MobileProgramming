@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -31,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
 
     private int scaleTypeIndex = 0;
 
+    ImageButton button;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) { // 애플리케이션이 이전에 실행되었던 상태 전달
@@ -47,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         textViewUserInfo = findViewById(R.id.textViewUserInfo);
 
         imageView = findViewById(R.id.imageView);
+        button = findViewById(R.id.imageButton);
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -103,6 +107,10 @@ public class MainActivity extends AppCompatActivity {
         float alpha = imageView.getAlpha();
         alpha = (alpha == 1.0f) ? 0.5f : 1.0f;
         imageView.setAlpha(alpha);
+    }
+
+    public void setImage(View view){
+        imageView.setImageResource(R.drawable.itkong2);
     }
 
 }
