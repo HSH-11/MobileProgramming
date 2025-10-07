@@ -1,35 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#FFFFFF">
+    android:layout_height="match_parent">
 
-    <!-- 자식 뷰를 중앙에 배치하려면 gravity 속성 추가 -->
-    <!-- android:gravity="center" -->
+    <TableRow>
+        <TextView android:text="주소"/>
+        <EditText android:text="경기도 수원시 팔달구"/>
+    </TableRow>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="344dp"
-        android:background="#00FF00"
-        android:orientation="horizontal" />
+    <TableRow>
+        <TextView android:text="이름"/>
+        <EditText android:text="홍길동"/>
+    </TableRow>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="385dp"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="214dp"
-            android:background="#0000FF"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="195dp"
-                android:background="#FF0000"
-                android:orientation="horizontal" />
-        </LinearLayout>
-    </LinearLayout>
-</LinearLayout>
+    <TableRow>
+        <Button android:text="저장"/>
+        <Button android:text="취소"/>
+    </TableRow>
+</TableLayout>
