@@ -1,35 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:columnCount="3"
-    android:rowCount="3"
-    tools:context=".MainActivity">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="45dip"
+        android:gravity="right|bottom"
+        android:text="12345678"
+        android:layout_weight="1"/>
 
-    <Button
-        android:text="Button 1" />
-
-    <Button
-        android:layout_columnSpan="2"
-        android:text="Button 2 (Column Span 2)" />
-
-    <Button
-        android:layout_rowSpan="2"
-        android:layout_gravity="fill_vertical"
-        android:text="Button 3" />
-
-    <Button
-        android:text="Button 4" />
-
-    <Button
-        android:text="Button 5" />
-
-    <Button
-        android:text="Button 6" />
-
-    <Button
-        android:text="Button 7" />
-
-
-</GridLayout>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:stretchColumns="0,1,2,3">
+        <TableRow>
+            <Button android:text="/" />
+            <Button android:text="x" />
+            <Button android:text="-" />
+            <Button android:text="+" />
+        </TableRow>
+        <TableRow>
+            <Button android:text="7" />
+            <Button android:text="8" />
+            <Button android:text="9" />
+            <Button android:text="&lt;" />
+        </TableRow>
+        <TableRow>
+            <Button android:text="4" />
+            <Button android:text="5" />
+            <Button android:text="6" />
+            <Button android:text="AC" />
+        </TableRow>
+        <TableRow>
+            <Button android:text="1" />
+            <Button android:text="2" />
+            <Button android:text="3" />
+        </TableRow>
+        <TableRow>
+            <Button android:text="0" android:layout_span="2" />
+            <Button android:text="." />
+            <Button android:text="=" />
+        </TableRow>
+    </TableLayout>
+</LinearLayout>
