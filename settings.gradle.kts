@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "Hello"
 include(":app")
 include(":app:layout")
+include(":event")
